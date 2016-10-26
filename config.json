@@ -19,11 +19,16 @@
   "showOn": {
     "market": true
   },
-  "requires": {
-    "out": ["embed"]
-  },
   "files": [
     "services/tuintralogin/service.js"
+  ],
+  "libs": [
+    {
+      "bower": {
+        "SHA-1": "~0.1.1"
+      },
+      "src": "bower_components/SHA-1/sha1.js"
+    }
   ],
   "images": {
     "popover": "services/tuintralogin/images/tuintra-login_popover.png",
@@ -34,11 +39,7 @@
       "services/tuintralogin/images/screenshot01.png"
     ]
   },
-  "scope": {
-    "childrenUrl": {
-      "embed": ""
-    }
-  },
+  "scope": {},
   "module": {
     "view": "services/tuintralogin/modules/static/index.html",
     "controller": "services/tuintralogin/modules/static/controller.js",

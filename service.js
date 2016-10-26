@@ -1,6 +1,7 @@
 angular
   .module('king.services.tuintralogin', [])
   .run(['configService', 'structureHooks', function(configService, structureHooks) {
+
     var config = {};
     var moduleFiles = {};
     var defaultUrl = '/login';
@@ -32,7 +33,14 @@ angular
         moduleFolder: moduleFiles.moduleFolder,
         view: moduleFiles.view,
         files: [moduleFiles.controller],
-        libs: [],
+        libs: [
+          {
+            "bower": {
+              "SHA-1": "~0.1.1"
+            },
+            "src": "bower_components/SHA-1/sha1.js"
+          }
+        ],
         scope: {
           'config': config
         }
