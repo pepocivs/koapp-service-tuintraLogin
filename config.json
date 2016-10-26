@@ -31,8 +31,7 @@
     "logo": "services/tuintralogin/images/tuintra-login_icon.png",
     "list": "services/tuintralogin/images/tuintra-login_list.png",
     "screenshots": [
-      "services/tuintralogin/images/screenshot01.png",
-      "services/tuintralogin/images/screenshot02.png"
+      "services/tuintralogin/images/screenshot01.png"
     ]
   },
   "scope": {
