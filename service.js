@@ -7,6 +7,7 @@ angular
     var module = {};
     if (configService.services && configService.services.tuintralogin) {
       console.info('[V] Loading tuintra\'s login...');
+
       config      = configService.services.tuintralogin.scope;
       moduleFiles = configService.services.tuintralogin.module;
       load();
@@ -30,7 +31,7 @@ angular
         },
         moduleFolder: moduleFiles.moduleFolder,
         view: moduleFiles.view,
-        files: [moduleFiles.controller, moduleFiles.factory],
+        files: [moduleFiles.controller],
         libs: [],
         scope: {
           'config': config
