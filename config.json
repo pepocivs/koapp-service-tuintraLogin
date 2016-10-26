@@ -1,0 +1,49 @@
+{
+  "name": "Tuintra Login",
+  "identifier": "tuintralogin",
+  "description": "Permite validar un usuario de tuintra",
+  "documentation": "# **Creates a simple tuintra's login",
+  "type": "A",
+  "version": "0.0.1",
+  "author": "PepoCivs",
+  "category": [
+    "login"
+  ],
+  "price": 0,
+  "subscription": false,
+  "platforms": [
+    "android",
+    "ios",
+    "windows"
+  ],
+  "showOn": {
+    "market": true
+  },
+  "requires": {
+    "out": ["embed"]
+  },
+  "files": [
+    "services/tuintralogin/service.js"
+  ],
+  "images": {
+    "popover": "services/tuintralogin/images/tuintra-login_popover.png",
+    "banner": "services/tuintralogin/images/tuintra-login_popover.png",
+    "logo": "services/tuintralogin/images/tuintra-login_icon.png",
+    "list": "services/tuintralogin/images/tuintra-login_list.png",
+    "screenshots": [
+      "services/tuintralogin/images/screenshot01.png",
+      "services/tuintralogin/images/screenshot02.png"
+    ]
+  },
+  "scope": {
+    "childrenUrl": {
+      "embed": ""
+    }
+  },
+  "module": {
+    "view": "services/tuintralogin/modules/static/index.html",
+    "controller": "services/tuintralogin/modules/static/controller.js",
+    "moduleFolder": "services/tuintralogin/modules"
+  },
+  "config": []
+}

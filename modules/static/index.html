@@ -1,0 +1,28 @@
+<div ng-controller="staticCtrl" class="module static">
+  <h2>{{ 'login.title' | translate }}</h2>
+  <form is="iron-form" method="post" action="/">
+    <koa-input name="club"
+               label="{{'login.club' | translate}}"
+               type="text"
+               ng-model="static.club"
+               auto-validate
+               required>
+    </koa-input>
+    <koa-input name="user"
+               label="{{'login.user' | translate}}"
+               type="text"
+               ng-model="static.user"
+               auto-validate
+               required>
+    </koa-input>
+    <koa-input name="pwd"
+               label="{{'login.password' | translate}}"
+               ng-model="static.pwd"
+               type="password"
+               required>
+    </koa-input>
+    <koa-button raised ng-click="login()">{{'login.'+buttonText | translate}}</koa-button>
+  </form>
+  <p class="status" ng-if="static.status">{{static.status}}</p>
+
+</div>
