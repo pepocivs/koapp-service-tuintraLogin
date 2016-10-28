@@ -1,9 +1,9 @@
 angular
   .controller('staticCtrl', loadFunction);
 
-loadFunction.$inject = ['$scope', 'structureService', '$location', '$http'];
+loadFunction.$inject = ['$scope', 'structureService', '$location', '$http', 'storageService'];
 
-function loadFunction($scope, structureService, $location, $http){
+function loadFunction($scope, structureService, $location, $http, storageService){
   structureService.registerModule($location, $scope, 'static');
   $scope.login = login;
 
@@ -26,14 +26,30 @@ function loadFunction($scope, structureService, $location, $http){
           'Accept-Language': 'es_ES'
         }
       })
-      .success(function(data) {
-        $scope.static.status = data;
-        applyScope();
-      })
+      .success(storeTokenAndGo)
       .error(function(e) {
         $scope.static.status = e.error || e.message;
         applyScope();
       });
+  }
+
+  function storeTokenAndGo(data) {
+    var dataToStore = {
+      'token': data.token,
+      'userId': data.userInfo._id,
+      'userName': data.userInfo.name
+    }
+    storageService.update('tuintraLogin', dataToStore).then(function(e) {
+      if (e) {
+        console.log('[V] Storage successful');
+        $scope.static.status = 'User created successfully!!';
+        goToIndex();
+      } else {
+        console.log('[V] Storage error');
+        $scope.static.status = 'Error in storage';
+        applyScope();
+      }
+    });
   }
 
   function goToIndex() {
