@@ -34,12 +34,7 @@ function loadFunction($scope, structureService, $location, $http, storageService
   }
 
   function storeTokenAndGo(data) {
-    var dataToStore = {
-      'token': data.token,
-      'userId': data.userInfo._id,
-      'userName': data.userInfo.name
-    }
-    storageService.update('tuintraLogin', dataToStore).then(function(e) {
+    storageService.update('tuintraLogin', data).then(function(e) {
       if (e) {
         console.log('[V] Storage successful');
         $scope.static.status = 'User created successfully!!';

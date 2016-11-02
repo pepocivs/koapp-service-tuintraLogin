@@ -7,6 +7,8 @@
                ng-model="static.club"
                auto-validate
                required>
+               <iron-icon icon="verified-user" prefix></iron-icon>
+
     </koa-input>
     <koa-input name="user"
                label="{{'login.user' | translate}}"
@@ -14,12 +16,15 @@
                ng-model="static.user"
                auto-validate
                required>
+               <iron-icon icon="perm-identity" prefix></iron-icon>
     </koa-input>
     <koa-input name="pwd"
                label="{{'login.password' | translate}}"
                ng-model="static.pwd"
                type="password"
                required>
+               <iron-icon icon="lock-outline" prefix></iron-icon>
+
     </koa-input>
     <koa-button raised ng-click="login()">{{'login.enter' | translate}}</koa-button>
   </form>
